@@ -15,7 +15,7 @@ if (isset($_SESSION['id']) && $_SESSION['time'] +3600 > time()) {
 
 if (!empty($_POST)) {
   if ($_POST['message'] !== '') {
-    $message = $db->prepare('INSERT INTO posts SET member_id=?, reply_message_id=?, message=?, created=NOW()');
+    $message = $db->prepare('INSERT INTO posts SET member_id=?, message=?, reply_message_id=?, created=NOW()');
     $message->execute(array(
       $member['id'],
       $_POST['message'],
